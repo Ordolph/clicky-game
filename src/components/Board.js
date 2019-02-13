@@ -75,12 +75,15 @@ const characters = [
 export default class Board extends React.Component {
 
         handleClick(event) {
-            console.log('click');
-            console.log(event.target.getAttribute('data-clicked'));
+            const clicked = event.target.getAttribute('data-clicked');
 
-            if (event.target.getAttribute('data-clicked') === false) {
-                console.log('it worked!')
+            if (clicked === 'false') {
+                event.target.setAttribute('data-clicked', 'true')
+                console.log('1st click')
             } 
+            else {
+                console.log('2nd click')
+            }
         };
 
         createImages = arr => {
